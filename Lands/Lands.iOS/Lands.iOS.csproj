@@ -128,4 +128,10 @@
       <Name>Lands</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\JALogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\backja.jpg" />
+  </ItemGroup>
 </Project>
