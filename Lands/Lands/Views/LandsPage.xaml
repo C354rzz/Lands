@@ -5,15 +5,69 @@
     x:Class="Lands.Views.LandsPage"
     BackgroundImage="backja"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
-    Title="Lands">
+    Title="Countries">
     <ContentPage.Content>
         <StackLayout
-            BindingContext="{Binding Lands}"
-            Padding="5">
-            <Label Text="ArmijosLands"
-                   FontSize="Large"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            BindingContext="{Binding Lands}">
+            <SearchBar
+                HeightRequest="46"
+                Text="{Binding Filter, Mode=TwoWay}"
+                Placeholder="Search..."
+                SearchCommand="{Binding SearchCommand}">
+            </SearchBar>
+            <ListView 
+                BackgroundColor="Transparent"
+                HasUnevenRows="true" 
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
+                ItemsSource="{Binding Lands}"
+                SeparatorVisibility="None"
+                RefreshCommand="{Binding RefreshCommand}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            
+                            <Frame
+                                CornerRadius="10"
+                                HasShadow="true"
+                                Margin="5">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <Label 
+                                        FontAttributes="Bold"
+                                        FontSize="Large"
+                                        TextColor="Black"
+                                        Text="{Binding Name}"
+                                        LineBreakMode="WordWrap"
+                                        Grid.ColumnSpan="2"
+                                        Grid.Row="0" 
+                                        Grid.Column="0" />
+
+                                    <Label 
+                                        Text="{Binding Capital, StringFormat='Capital: {0:F0}'}"
+                                        LineBreakMode="WordWrap"
+                                        Grid.Row="1" 
+                                        Grid.Column="0" />
+                                    <Label
+                                        Text="{Binding Region, StringFormat='Region: {0:F0}'}" 
+                                        LineBreakMode="WordWrap"
+                                        Grid.ColumnSpan="2"
+                                        Grid.Row="1" 
+                                        Grid.Column="1"/>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

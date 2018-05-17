@@ -55,7 +55,7 @@
             this.IsEnabled = true;
 
             this.Email = "armijo@gmail.com";
-            this.Password = "123456";
+            this.Password = "12345";
         }
         #endregion
         #region Commands
