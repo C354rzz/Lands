@@ -6,7 +6,7 @@
     public partial class App : Application
 	{
         #region Constructors
-        public App()
+        public App ()
         {
             InitializeComponent();
 
