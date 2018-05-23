@@ -5,6 +5,7 @@
     using System.Windows.Input;
     using Xamarin.Forms;
     using Lands.Services;
+    using Helpers;
 
     public class LoginViewModel : BaseViewModel
     {
@@ -72,9 +73,9 @@
             if (string.IsNullOrEmpty(this.Email))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                   "Error",
-                   "You must enter an email",
-                   "Accept");
+                   Languages.Error,
+                    Languages.EmailValidation,
+                    Languages.Accept);
                 return;
             }
 
@@ -82,9 +83,9 @@
             if (string.IsNullOrEmpty(this.Password))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                   "Error",
-                   "You must enter a password",
-                   "Accept");
+                   Languages.Error,
+                    Languages.PasswordValidation,
+                    Languages.Accept);
                 return;
             }
 
@@ -99,9 +100,9 @@
                 this.IsEnabled = true;
                 //this.IsRefreshing = false;
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     connection.Message,
-                    "Accept");
+                    Languages.Accept);
                 await Application.Current.MainPage.Navigation.PopAsync();
                 return;
             }
@@ -116,9 +117,9 @@
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     connection.Message,
-                    "Accept");
+                    Languages.Accept);
                 return;
             }
 
@@ -127,9 +128,9 @@
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     connection.Message,
-                    "Accept");
+                    Languages.Accept);
                 return;
             }
 
