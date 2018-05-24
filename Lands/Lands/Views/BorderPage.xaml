@@ -9,9 +9,11 @@
     Icon="ic_action_language"
    Title="{i18n:Translate Borders}">
     <ContentPage.Content>
+
+        <ScrollView
+            BindingContext="{Binding Land}">
         <StackLayout
-            BindingContext="{Binding Land}"
-            Padding="5">
+        Padding="5">
             <Label
                 FontSize="Large"
                 FontAttributes="Bold"
@@ -48,5 +50,6 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
