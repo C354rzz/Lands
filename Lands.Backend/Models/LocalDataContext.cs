@@ -1,7 +1,8 @@
 ﻿namespace Lands.Backend.Models
 {
-    using Domain;
+    using Dominio;
     public class LocalDataContext : DataContext
     {
+        
     }
 }
