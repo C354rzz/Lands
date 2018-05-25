@@ -15,13 +15,12 @@
             set;
         }
 
-        public TokenResponse Token
-        {
-            get;
-            set;
-        }
-        
-        public ObservableCollection<MenuItemViewModel> Menus
+
+        public string Token { get; set; }
+        public string ToketType { get; set; }
+
+
+    public ObservableCollection<MenuItemViewModel> Menus
         {
             get;
             set;

@@ -13,32 +13,32 @@
             }
         }
 
-        const string sourceId = "SourceId";
-        const string targetId = "TargetId";
-        static readonly int intDefault = 0;
+        const string token = "Token";
+        const string tokenType = "TokenType";
+        static readonly string stringDefault = string.Empty ;
 
-        public static int SourceId
+        public static string Token
         {
             get
             {
-                return AppSettings.GetValueOrDefault(sourceId, intDefault);
+                return AppSettings.GetValueOrDefault(token, stringDefault);
             }
             set
             {
-                AppSettings.AddOrUpdateValue(sourceId, value);
+                AppSettings.AddOrUpdateValue(token, value);
             }
         }
 
 
-        public static int TargetId
+        public static string TokenType
         {
             get
             {
-                return AppSettings.GetValueOrDefault(targetId, intDefault);
+                return AppSettings.GetValueOrDefault(tokenType, stringDefault);
             }
             set
             {
-                AppSettings.AddOrUpdateValue(targetId, value);
+                AppSettings.AddOrUpdateValue(tokenType, value);
             }
         }
     }

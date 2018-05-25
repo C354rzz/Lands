@@ -20,7 +20,6 @@
         private bool isRunning;
         private bool isEnabled;
         #endregion
-        
 
         #region Properties
         public string Email
@@ -52,13 +51,14 @@
         {
             this.apiService = new ApiService();
 
-            this.IsRemembered = true;
+            this.IsRemembered = false;
             this.IsEnabled = true;
 
             this.Email = "c354rzz@gmail.com";
-            this.Password = "12345";
+            this.Password = "123456";
         }
         #endregion
+
         #region Commands
         public ICommand LoginCommand
         {
@@ -135,9 +135,18 @@
             }
 
             var mainViewModel = MainViewModel.GetInstance();
-            mainViewModel.Token = token;
+            mainViewModel.Token = token.AccessToken;
+            mainViewModel.ToketType = token.TokenType;
+
+            if (this.IsRemembered)
+            {
+                Settings.Token = token.AccessToken;
+                Settings.TokenType = token.TokenType; 
+            } 
+
             mainViewModel.Lands = new LandsViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
+            Application.Current.MainPage = new MasterPage();
+            //await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
 
             //if (this.Email != "armijo@gmail.com" || this.Password != "12345")
             //{
