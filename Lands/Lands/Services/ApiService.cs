@@ -7,7 +7,7 @@
     using System.Text;
     using System.Threading.Tasks;
     using Models;
-    using Domain;
+    using Dominio;
     using Newtonsoft.Json;
     using Plugin.Connectivity;
 
