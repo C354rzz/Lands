@@ -15,7 +15,8 @@
     <ContentPage.Content>
         <ScrollView
             BindingContext="{Binding Login}">
-            <StackLayout Padding="5" Spacing="10">
+            <StackLayout Padding="5" 
+                         Spacing="10">
                 <Image
                     Source="JALogo"
                     HeightRequest="100">
