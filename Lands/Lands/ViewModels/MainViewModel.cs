@@ -65,19 +65,19 @@
 
             this.Menus.Add(new MenuItemViewModel
             {
-                Icon = "ic_account_circle",
+                Icon = "ic_account_circleB",
                 PageName = "MyProfilePage",
                 Title = Languages.MyProfile,
             });
             this.Menus.Add(new MenuItemViewModel
             {
-                Icon = "ic_insert_chart",
+                Icon = "ic_insert_chartB",
                 PageName = "StatisticsPage",
                 Title = Languages.Statistics,
             });
             this.Menus.Add(new MenuItemViewModel
             {
-                Icon = "ic_exit_to_app",
+                Icon = "ic_exit_to_appB",
                 PageName = "LoginPage",
                 Title = Languages.LogOut,
             });
