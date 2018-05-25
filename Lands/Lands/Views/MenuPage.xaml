@@ -7,11 +7,42 @@
     BackgroundImage="backja"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
     Title="{i18n:Translate Menu}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primary">#FE4B05</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Menu"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView
+                ItemsSource="{Binding Menus}"
+                HasUnevenRows="True"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="8">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image
+                                    Source="{Binding Icon}"
+                                    VerticalOptions="Start"
+                                    WidthRequest="50"
+                                    HeightRequest="50"/>
+                                <Label
+                                    Grid.Column="1"
+                                    FontAttributes="Bold"
+                                    VerticalOptions="Center"
+                                    TextColor="{StaticResource primary}"
+                                    Text="{Binding Title}">
+                                </Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
