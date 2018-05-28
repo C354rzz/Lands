@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+    xmlns:i18n="clr-namespace:Lands.Helpers"
+    x:Class="Lands.Views.RegisterPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Title="Register title">
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding Register}">
+            <StackLayout
+                Padding="5">
+                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="0.15*"></RowDefinition>
+
+                        <RowDefinition Height="0.85*"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0" Background="Gainsboro">
+
+                        <TextBlock 
+                            Name="Reg" 
+                            Text="Registration Form"  
+            TextAlignment="Center" VerticalAlignment="Center"  
+            FontSize="30" FontWeight="Black" FontStyle="Italic"></TextBlock>
+
+                    </Border>
+
+                    <StackPanel Grid.Row="1">
+
+                        <TextBox PlaceholderText="Enter First Name"  
+            Width="300" Margin="0,50,0,0"></TextBox>
+
+                        <TextBox PlaceholderText="Enter Last Name"  
+            Width="300" Margin="0,10,0,0"></TextBox>
+
+                        <TextBox PlaceholderText="Enter Email" Width="300"  
+            Margin="0,10,0,0"></TextBox>
+
+                        <TextBox PlaceholderText="Enter Address"  
+            Width="300" Margin="0,10,0,0"></TextBox>
+
+                        <RelativePanel x:Name="inside" Grid.Row="1"  
+            HorizontalAlignment="Center" Margin="0,20,0,0">
+
+                            <Button x:Name="savebtn" Content="Save" Height="50"  
+                Width="70"></Button>
+
+                            <Button x:Name="cancelbtn" Content="Cancel"  
+                Height="50" Width="70" RelativePanel.RightOf="savebtn"  
+                Margin="10,0,0,0"></Button>
+
+                        </RelativePanel>
+
+                    </StackPanel>
+
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

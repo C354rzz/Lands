@@ -82,16 +82,21 @@
                     </Button>
                     <Button HeightRequest="50" 
                          TextColor="White" 
-                         Text="{i18n:Translate Forgot}"
+                         Text="{i18n:Translate Register}"
+                         Command="{Binding RegisterCommand}"
                          IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                          BackgroundColor="{StaticResource primary}"
                          HorizontalOptions="FillAndExpand">
                     </Button>
                     <Label Margin="0,0,0,10" 
-                       Text="{i18n:Translate Register}"
+                       Text="{i18n:Translate Forgot}"
+                           
                        VerticalOptions="EndAndExpand"
                        HorizontalOptions="Center" 
                        TextColor="White">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding RegisterCommand}"/>
+                        </Frame.GestureRecognizers>
                     </Label>
                 </StackLayout>
             </StackLayout>
