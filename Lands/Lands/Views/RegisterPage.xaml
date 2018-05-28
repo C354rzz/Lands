@@ -9,57 +9,90 @@
     <ContentPage.Content>
         <ScrollView
             BindingContext="{Binding Register}">
-            <StackLayout
-                Padding="5">
-                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-                    <Grid.RowDefinitions>
-
-                        <RowDefinition Height="0.15*"></RowDefinition>
-
-                        <RowDefinition Height="0.85*"></RowDefinition>
-
-                    </Grid.RowDefinitions>
-
-                    <Border Grid.Row="0" Background="Gainsboro">
-
-                        <TextBlock 
-                            Name="Reg" 
-                            Text="Registration Form"  
-            TextAlignment="Center" VerticalAlignment="Center"  
-            FontSize="30" FontWeight="Black" FontStyle="Italic"></TextBlock>
-
-                    </Border>
-
-                    <StackPanel Grid.Row="1">
-
-                        <TextBox PlaceholderText="Enter First Name"  
-            Width="300" Margin="0,50,0,0"></TextBox>
-
-                        <TextBox PlaceholderText="Enter Last Name"  
-            Width="300" Margin="0,10,0,0"></TextBox>
-
-                        <TextBox PlaceholderText="Enter Email" Width="300"  
-            Margin="0,10,0,0"></TextBox>
-
-                        <TextBox PlaceholderText="Enter Address"  
-            Width="300" Margin="0,10,0,0"></TextBox>
-
-                        <RelativePanel x:Name="inside" Grid.Row="1"  
-            HorizontalAlignment="Center" Margin="0,20,0,0">
-
-                            <Button x:Name="savebtn" Content="Save" Height="50"  
-                Width="70"></Button>
-
-                            <Button x:Name="cancelbtn" Content="Cancel"  
-                Height="50" Width="70" RelativePanel.RightOf="savebtn"  
-                Margin="10,0,0,0"></Button>
-
-                        </RelativePanel>
-
-                    </StackPanel>
-
-                </Grid>
+            <StackLayout Padding="5" 
+                         Spacing="10">
+                <Image
+                    Source="JALogo"
+                    HeightRequest="100">
+                </Image>
+                <StackLayout 
+                    Margin="40,0"
+                    Orientation="Vertical"
+                    VerticalOptions="CenterAndExpand">
+                    <Entry
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Keyboard="Email"
+                        Placeholder="{i18n:Translate EmailPlaceHolder}"
+                        BackgroundColor="White"
+                        PlaceholderColor="#b5babc"
+                        Opacity=".5"
+                        TextColor="Black"
+                        Text="{Binding Email, Mode=TwoWay}">
+                    </Entry>
+                    <Entry
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        IsPassword="true"
+                        Placeholder="{i18n:Translate PasswordPlaceHolder}"
+                        BackgroundColor="White"
+                        PlaceholderColor="#b5babc"
+                        Opacity=".5"
+                        TextColor="Black"
+                        Text="{Binding Password, Mode=TwoWay}">
+                    </Entry>
+                </StackLayout>
+                <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                    VerticalOptions="CenterAndExpand">
+                </ActivityIndicator>
+                <StackLayout
+                    Margin="10,0"
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
+                    <Label
+                        HorizontalOptions="StartAndExpand"
+                        TextColor="White"
+                         Text="{i18n:Translate Rememberme}"
+                        VerticalOptions="Center">
+                    </Label>
+                    <Switch
+                        IsToggled="{Binding IsRemembered, Mode=TwoWay}"
+                        HorizontalOptions="End">
+                    </Switch>
+                </StackLayout>
+                <StackLayout 
+                    Margin="40,0"
+                    Orientation="Vertical"
+                    VerticalOptions="CenterAndExpand">
+                    <Button 
+                        HeightRequest="50" 
+                        TextColor="White" 
+                        Text="{i18n:Translate Login}"  
+                        Command="{Binding LoginCommand}"
+                        BackgroundColor="{StaticResource primary}"
+                        HorizontalOptions="FillAndExpand"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}">
+                    </Button>
+                    <Button HeightRequest="50" 
+                         TextColor="White" 
+                         Text="{i18n:Translate Register}"
+                         Command="{Binding RegisterCommand}"
+                         IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                         BackgroundColor="{StaticResource primary}"
+                         HorizontalOptions="FillAndExpand">
+                    </Button>
+                    <Label Margin="0,0,0,10" 
+                       Text="{i18n:Translate Forgot}"
+                           
+                       VerticalOptions="EndAndExpand"
+                       HorizontalOptions="Center" 
+                       TextColor="White">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding RegisterCommand}"/>
+                        </Frame.GestureRecognizers>
+                    </Label>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
