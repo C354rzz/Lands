@@ -21,6 +21,7 @@
         {
             global::Xamarin.Forms.Forms.Init();
             CachedImageRenderer.Init();
+            ImageCircle.Forms.Plugin.iOS.ImageCircleRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

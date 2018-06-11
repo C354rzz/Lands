@@ -38,6 +38,13 @@
         [JsonIgnore]
         public virtual UserType UserType { get; set; }
 
+        [NotMapped]
+        public byte[] ImageArray { get; set; }
+
+        [NotMapped]
+        public string Password { get; set; }
+
+
         [Display(Name = "Image")]
         public string ImageFullPath
         {
