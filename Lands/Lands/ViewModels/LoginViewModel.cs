@@ -109,7 +109,7 @@
             }
 
             var token = await this.apiService.GetToken(
-                "http://apiarmilands.azurewebsites.net/",
+                "http://landsarmiapi.azurewebsites.net/",
                 this.Email,
                 this.Password);
 
