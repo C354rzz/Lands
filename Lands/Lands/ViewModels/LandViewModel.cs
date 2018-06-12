@@ -47,6 +47,7 @@
             this.Languages = new ObservableCollection<Language>(this.Land.Languages);
         }
         #endregion
+
         #region Methods
         private void LoadBorders()
         {
